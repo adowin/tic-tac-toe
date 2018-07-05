@@ -28,6 +28,9 @@ public class TickTacToe {
      */
     public static void main(final String[] args){
         System.out.println("Tick Tac Toe!");
+
+        TickTacToe ttt = new TickTacToe();
+        ttt.printMenu();
     }
 
     /**
@@ -35,13 +38,13 @@ public class TickTacToe {
      */
     public void printMenu() {
 
-        System.out.println("\t\tWelcome to the game!");
+        System.out.println("\t\t Welcome to the game!");
 
-        System.out.println("\t\t------------------------------------");
+        System.out.println("\t\t----------------------");
 
-        System.out.println("\t\tHow many players?");
-        System.out.println("\t\t0: AI vs AI");
-        System.out.println("\t\t1: AI vs Human");
-        System.out.println("\t\t2: Human vs Human");
+        System.out.println("\n\t\t How many players?");
+        System.out.println("\n\t\t 0: AI vs AI");
+        System.out.println("\t\t 1: AI vs Human");
+        System.out.println("\t\t 2: Human vs Human");
     }
 }
