@@ -28,6 +28,20 @@ public class TickTacToe {
      */
     public static void main(final String[] args){
         System.out.println("Tick Tac Toe!");
-        System.out.println("Welcome to the game!");
+    }
+
+    /**
+     * A method that prints the menu
+     */
+    public void printMenu() {
+
+        System.out.println("\t\tWelcome to the game!");
+
+        System.out.println("\t\t------------------------------------");
+
+        System.out.println("\t\tHow many players?");
+        System.out.println("\t\t0: AI vs AI");
+        System.out.println("\t\t1: AI vs Human");
+        System.out.println("\t\t2: Human vs Human");
     }
 }
