@@ -1,2 +1,2 @@
-# Tick-Tac-Toe
-A java program of tick-tac-toe
+# Tic-Tac-Toe
+A java program of tic-tac-toe
