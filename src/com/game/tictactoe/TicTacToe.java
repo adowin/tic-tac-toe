@@ -18,33 +18,64 @@
 */
 package com.game.tictactoe;
 
+import java.util.Scanner;
+
 /**
  * This class provides an entry point for the Tick Tac Toe game.
  */
-public class TicTacToe {
+public final class TicTacToe {
 
     /**
      * Program main
      */
     public static void main(final String[] args){
-        System.out.println("Tic Tac Toe!");
 
-        TicTacToe ttt = new TicTacToe();
-        ttt.printMenu();
+        final TicTacToe ttt = new TicTacToe();
+        ttt.printMainMenu();
+
+        // Initialize a scanner for user input
+        final Scanner consoleScanner = new Scanner(System.in);
+        String userInput = "";
+
+        // After printing the main menu, prompt the user for choice.
+        // Always get input as String and sanatize later
+        userInput = consoleScanner.nextLine();
+
+        // TODO: implement main menu logic
+        // Parse user choice, exit on a 0, printGameMenu on a 1
+
     }
 
     /**
-     * A method that prints the menu
+     * Prints the main game menu prompting the user to play or quit
      */
-    public void printMenu() {
+    public void printMainMenu() {
 
-        System.out.println("\t\t Welcome to the game!");
+        System.out.println("\n\t Welcome to the game!");
 
-        System.out.println("\t\t----------------------");
+        this.printMenuDivider();
 
-        System.out.println("\n\t\t How many players?");
-        System.out.println("\n\t\t 0: AI vs AI");
-        System.out.println("\t\t 1: AI vs Human");
-        System.out.println("\t\t 2: Human vs Human");
+        System.out.println("\n\t 1. Play new game");
+        System.out.println("\t 0. Quit\n");
+        System.out.print("\t Choice?: "); // No new line for user input
+    }
+
+    /**
+     * Prints the gameplay sub menu prompting the user for the players
+     */
+    public void printGameMenu() {
+
+        this.printMenuDivider();        
+        System.out.println("\n\t How many players?");
+        System.out.println("\n\t 0: AI vs AI");
+        System.out.println("\t 1: AI vs Human");
+        System.out.println("\t 2: Human vs Human");
+    }
+
+    /**
+     * A helper method for printing divider lines between game menus
+     */
+    public void printMenuDivider() {
+        System.out.println("\t----------------------");
     }
 }
