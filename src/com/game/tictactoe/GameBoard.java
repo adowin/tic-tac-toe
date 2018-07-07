@@ -23,25 +23,62 @@ package com.game.tictactoe;
  */
 public class GameBoard {
 
+    /**
+     * The size of a standard Tic Tac Toe board - 3x3
+     */
     private static final int BOARD_SIZE = 3;
+
+    /**
+     * The game board representation
+     */
     private final char[][] board;
+
+    /**
+     * The number of turns taken in this game. X starts first (0).
+     */
+    private int turnNumber;
 
     /**
      * Constructor
      */
     GameBoard() {
         board = new char[BOARD_SIZE][BOARD_SIZE];
+        turnNumber = 0;
     }
 
+    /**
+     * Gets the current game board. This method only returns a COPY of the game board.
+     * Modifications to the current board must be made through the @takeMove() method.
+     * 
+     * @return a copy of the current game board
+     */
     public char[][] getGameBoard() {
-        // TODO: Should we return a copy of the board to prevent an outside class from modification?
-        return board;
+
+        final char[][] copiedBoard = new char[BOARD_SIZE][BOARD_SIZE];
+
+        // Copy the other board into this board
+        for(int i = 0; i < GameBoard.BOARD_SIZE; i++) {
+            for(int j = 0; j < GameBoard.BOARD_SIZE; j++) {
+                copiedBoard[i][j] = this.board[i][j];
+            }
+        }
+
+        return copiedBoard;
     }
 
-    public boolean takeMove(final boolean isX, final int xCoord, final int yCoord) {
+    /**
+     * A method for allowing a player to take a move on the current board.
+     * 
+     * @param xCoord The X position (in x,y) where the player would like to take a move
+     * @param yCoord the Y position (in x,y) where the player would like to take a move
+     * 
+     * @return whether or not the move was successful
+     */
+    public boolean takeMove(final int xCoord, final int yCoord) {
         boolean isValidMove = false;
 
         // TODO: Perform logic for taking a move and checking validity
+        // Check on the turnNumber counter to determine if the move is for X or O
 
         return isValidMove;
     }
