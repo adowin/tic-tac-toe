@@ -44,6 +44,9 @@ public final class TicTacToe {
         // TODO: implement main menu logic
         // Parse user choice, exit on a 0, printGameMenu on a 1
 
+
+        // Close the scanner before exiting
+        consoleScanner.close();
     }
 
     /**
